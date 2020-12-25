@@ -21,13 +21,17 @@ const App = () => {
     setScoreData((oldScore) => [...oldScore, scoreEntry]);
   };
 
+  const deleteScore = (scoreId) => {
+    setScoreData((scores) => scores.filter((score) => score.id !== scoreId));
+  };
+
   return (
     <Layout>
       <h1>Pulse</h1>
       <div>
         <ScoreSelector saveScore={saveScore} />
       </div>
-      <ScoreList items={scoreData} />
+      <ScoreList items={scoreData} deleteScore={deleteScore} />
     </Layout>
   );
 };
