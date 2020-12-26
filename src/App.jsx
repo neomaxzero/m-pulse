@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+
 import useLocalStorage from "./hooks/useLocalStorage";
+import Layout from "./Layout";
 import ScoreList from "./ScoreList";
 import ScoreSelector from "./ScoreSelector";
 import getId from "./utils/id";
-
-const Layout = styled.section`
-  padding: 2rem;
-
-  h1 {
-    font-size: 1.5rem;
-  }
-`;
 
 const App = () => {
   const [scoreData, setScoreData] = useLocalStorage("score", []);

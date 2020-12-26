@@ -1,0 +1,5 @@
+type Scores @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  score: String
+  date: AWSDate
+}
