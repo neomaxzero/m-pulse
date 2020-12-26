@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "snowpack dev",
-    "build": "amplify init && snowpack build"
+    "build": "snowpack build"
   },
   "devDependencies": {
     "@aws-amplify/cli": "^4.40.1",
