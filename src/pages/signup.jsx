@@ -14,7 +14,7 @@ const ErrorMessage = styled.div`
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = async (data) => {
@@ -43,6 +43,7 @@ const SignUp = () => {
 
   return (
     <Layout>
+      <h1>Sign Up</h1>
       <ErrorMessage>{error && error.message}</ErrorMessage>
       <form id="login" onSubmit={handleSubmit(onSubmit)}>
         <Input>

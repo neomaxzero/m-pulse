@@ -34,6 +34,7 @@ const Login = () => {
 
   return (
     <Layout>
+      <h1>Log In</h1>
       <ErrorMessage>{error && error.message}</ErrorMessage>
       <form id="login" onSubmit={handleSubmit(onSubmit)}>
         <Input>
