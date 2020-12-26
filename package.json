@@ -4,6 +4,7 @@
     "build": "amplify init && snowpack build"
   },
   "devDependencies": {
+    "@aws-amplify/cli": "^4.40.1",
     "@snowpack/plugin-react-refresh": "^2.3.9",
     "snowpack": "^2.18.4"
   },
