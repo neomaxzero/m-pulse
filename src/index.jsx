@@ -8,6 +8,7 @@ import awsconfig from "./aws-exports";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 
+console.log(awsconfig);
 Amplify.configure(awsconfig);
 
 ReactDOM.render(

@@ -5,11 +5,13 @@
   },
   "devDependencies": {
     "@aws-amplify/cli": "^4.40.1",
+    "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-react-refresh": "^2.3.9",
     "snowpack": "^2.18.4"
   },
   "dependencies": {
     "aws-amplify": "^3.3.13",
+    "dotenv": "^8.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.13.1",
