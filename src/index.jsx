@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Amplify, { Auth } from "aws-amplify";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import App from "./App";
 import awsconfig from "./aws-exports";
