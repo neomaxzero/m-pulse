@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
 import Layout from "../Layout";
-import SignUpSuccess from "./signupSuccess";
+import SignUpConfirmation from "./signupConfirmation";
 
 const Input = styled.div``;
 
@@ -14,9 +14,9 @@ const ErrorMessage = styled.div`
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch, errors, getValues } = useForm();
   const onSubmit = async (data) => {
     setLoading(true);
     const { user: username, password } = data;
@@ -24,8 +24,11 @@ const SignUp = () => {
       const { user } = await Auth.signUp({
         username,
         password,
+        attributes: {
+          email: username,
+        },
       });
-      setSuccess(true);
+      setSuccess(username);
       console.log(user);
     } catch (error) {
       setError(error);
@@ -37,7 +40,7 @@ const SignUp = () => {
   if (success)
     return (
       <Layout>
-        <SignUpSuccess />
+        <SignUpConfirmation username={success} />
       </Layout>
     );
 

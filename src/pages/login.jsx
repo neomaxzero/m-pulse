@@ -23,7 +23,7 @@ const Login = () => {
     const { user: username, password } = data;
 
     try {
-      const user = await Auth.signIn(username, password);
+      await Auth.signIn(username, password);
       history.push("/");
     } catch (error) {
       setError(error);
