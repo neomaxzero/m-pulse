@@ -1,0 +1,7 @@
+{
+    "tableName": "scores",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "date",
+    "sortKeyType": "S"
+}

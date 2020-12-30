@@ -7,6 +7,13 @@ const awsmobile = {
     "aws_appsync_region": "eu-west-1",
     "aws_appsync_authenticationType": "API_KEY",
     "aws_appsync_apiKey": "da2-2uefuabs5rem3hdpemcfnget5i",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "scores",
+            "endpoint": "https://1qf9qxbuxj.execute-api.eu-west-1.amazonaws.com/staging",
+            "region": "eu-west-1"
+        }
+    ],
     "aws_cognito_identity_pool_id": "eu-west-1:7eff6161-47b7-43aa-81f6-a4be0c97d0bc",
     "aws_cognito_region": "eu-west-1",
     "aws_user_pools_id": "eu-west-1_mhyhBXzBV",
@@ -24,7 +31,14 @@ const awsmobile = {
         "redirectSignOut": "http://localhost:8081/,http://localhost:8081/",
         "responseType": "code"
     },
-    "federationTarget": "COGNITO_USER_POOLS"
+    "federationTarget": "COGNITO_USER_POOLS",
+    "aws_dynamodb_all_tables_region": "eu-west-1",
+    "aws_dynamodb_table_schemas": [
+        {
+            "tableName": "scores-staging",
+            "region": "eu-west-1"
+        }
+    ]
 };
 
 
