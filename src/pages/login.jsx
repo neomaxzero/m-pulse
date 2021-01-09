@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Auth } from "aws-amplify";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { Auth } from 'aws-amplify';
+import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
-import Layout from "../Layout";
-import { Link } from "react-router-dom";
+import Layout from '../components/Layout';
+import { Link } from 'react-router-dom';
 
 const Input = styled.div``;
 
@@ -16,7 +16,7 @@ const Login = () => {
   const history = useHistory();
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     setLoading(true);
@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       await Auth.signIn(username, password);
-      history.push("/");
+      history.push('/');
     } catch (error) {
       setError(error);
     }

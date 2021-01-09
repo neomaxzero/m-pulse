@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
-import Logo from './components/Logo';
+import Logo from './Logo';
+import GlobalStyles from './globalStyles';
+import { ThemeProvider } from '@emotion/react';
+import theme from './theme';
 
 const LayoutW = styled.section`
   padding: 2rem;
-
-  h1 {
-    font-size: 1.5rem;
-  }
 `;
 
 const Container = styled.div`
@@ -22,6 +21,8 @@ const Container = styled.div`
 
 const Navigator = styled.nav`
   display: flex;
+  align-items: center;
+  font-size: 0.8rem;
   justify-content: space-between;
 `;
 
@@ -29,7 +30,7 @@ const ButtonLink = styled.span`
   cursor: pointer;
 `;
 const Username = styled.span`
-  font-size: 0.8rem;
+  margin-right: 1.2rem;
 `;
 
 const Layout = ({ children }) => {
@@ -58,20 +59,23 @@ const Layout = ({ children }) => {
   };
   return (
     <LayoutW>
-      <Navigator>
-        <Link to="/">
-          <Logo />
-        </Link>
-        {user ? (
-          <div>
-            <Username>{user}</Username>
-            <ButtonLink onClick={logout}> Log out</ButtonLink>
-          </div>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
-      </Navigator>
-      <Container>{children}</Container>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Navigator>
+          <Link to="/">
+            <Logo />
+          </Link>
+          {user ? (
+            <div>
+              <Username>{user}</Username>
+              <ButtonLink onClick={logout}> Log out</ButtonLink>
+            </div>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </Navigator>
+        <Container>{children}</Container>
+      </ThemeProvider>
     </LayoutW>
   );
 };

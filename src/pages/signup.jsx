@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Auth } from "aws-amplify";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { Auth } from 'aws-amplify';
+import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 
-import Layout from "../Layout";
-import SignUpConfirmation from "./signupConfirmation";
+import Layout from '../components/Layout';
+
+import SignUpConfirmation from './signupConfirmation';
 
 const Input = styled.div``;
 
@@ -14,8 +15,8 @@ const ErrorMessage = styled.div`
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
   const { register, handleSubmit, watch, errors, getValues } = useForm();
   const onSubmit = async (data) => {
     setLoading(true);
@@ -32,7 +33,7 @@ const SignUp = () => {
       console.log(user);
     } catch (error) {
       setError(error);
-      console.log("error signing up:", error);
+      console.log('error signing up:', error);
     }
     setLoading(false);
   };

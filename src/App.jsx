@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
 import useLocalStorage from './hooks/useLocalStorage';
-import Layout from './Layout';
+import Layout from './components/Layout';
 import ScoreList from './ScoreList';
 import ScoreSelector from './ScoreSelector';
 import getId from './utils/id';
 import { API } from 'aws-amplify';
+import Hero from './components/shared/Hero';
 
 const API_NAME = 'scores';
 const API_PATH = '/scores/1';
 
 function getData() {
-  return API.get(API_NAME, API_PATH);
+  return API.get(API_NAME, '/scores/');
 }
 
 function putData(data) {
@@ -55,7 +56,7 @@ const App = () => {
 
   return (
     <Layout>
-      <h1>Pulse</h1>
+      <Hero>How are you feeling today?</Hero>
       <div>
         <ScoreSelector saveScore={saveScore} />
       </div>

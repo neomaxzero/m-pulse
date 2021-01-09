@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoSvg from './m-pulse.logo.svg';
 
 const Logo = () => (
   <svg
