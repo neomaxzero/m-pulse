@@ -47,6 +47,11 @@
                   {
                       "AttributeName": "date",
                       "AttributeType": "S"
+                  }  , 
+                  
+                  {
+                      "AttributeName": "userId",
+                      "AttributeType": "S"
                   } 
                   
                 ],
@@ -93,6 +98,29 @@
                         }
                     ]
                 }
+                
+                ,"GlobalSecondaryIndexes": [
+                  
+                    {
+                        "IndexName": "UserDateIndex",
+                        "KeySchema": [
+                            
+                            {
+                                "AttributeName": "userId",
+                                "KeyType": "HASH"
+                            } 
+                            
+                        ],
+                        "Projection": {
+                            "ProjectionType": "ALL"
+                        },
+                        "ProvisionedThroughput": {
+                            "ReadCapacityUnits": "5",
+                            "WriteCapacityUnits": "5"
+                        }
+                    } 
+                  
+                ]
                 
             }
         }

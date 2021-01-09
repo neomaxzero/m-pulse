@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
-import { Auth } from "aws-amplify";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
+import Logo from './components/Logo';
 
 const LayoutW = styled.section`
   padding: 2rem;
@@ -30,6 +31,7 @@ const ButtonLink = styled.span`
 const Username = styled.span`
   font-size: 0.8rem;
 `;
+
 const Layout = ({ children }) => {
   const [user, setUser] = useState();
   const history = useHistory();
@@ -46,7 +48,7 @@ const Layout = ({ children }) => {
   }, [setUser]);
 
   const logout = async () => {
-    console.log("logging out");
+    console.log('logging out');
     try {
       await Auth.signOut();
       location.reload();
@@ -57,7 +59,9 @@ const Layout = ({ children }) => {
   return (
     <LayoutW>
       <Navigator>
-        <Link to="/">P</Link>
+        <Link to="/">
+          <Logo />
+        </Link>
         {user ? (
           <div>
             <Username>{user}</Username>
