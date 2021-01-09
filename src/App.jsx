@@ -12,13 +12,15 @@ const API_NAME = 'scores';
 const API_PATH = '/scores/1';
 
 function getData() {
-  return API.get(API_NAME, '/scores/');
+  return API.get(API_NAME, '/scores/all');
 }
 
 function putData(data) {
-  return API.put(API_NAME, '/scores', {
-    body: { id: data[0].id, date: data[0].date, score: 1 },
-  });
+  if (data.length) {
+    return API.put(API_NAME, '/scores', {
+      body: { id: 'all', date: data.date, score: data.score },
+    });
+  }
 }
 
 const App = () => {
