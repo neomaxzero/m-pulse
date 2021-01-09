@@ -59,9 +59,7 @@ const App = () => {
   return (
     <Layout>
       <Hero>How are you feeling today?</Hero>
-      <div>
-        <ScoreSelector saveScore={saveScore} />
-      </div>
+      <ScoreSelector saveScore={saveScore} />
       <ScoreList items={scoreData} deleteScore={deleteScore} />
     </Layout>
   );

@@ -13,7 +13,7 @@ const greys = {
 
 const theme = {
   colors: {
-    primary: '#ab2ff7',
+    primary: '#5619A4',
     primary16: 'rgba(171, 47, 247, 0.16)',
     primaryOverText: '#9529d8',
     error: '#FF431A',
