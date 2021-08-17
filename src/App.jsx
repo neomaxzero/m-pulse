@@ -7,7 +7,6 @@ import ScoreSelector from './ScoreSelector';
 import getId from './utils/id';
 import { API } from 'aws-amplify';
 import Hero from './components/shared/Hero';
-import SystemOne from 'ui-system-one';
 import Graph from './components/Graph';
 const API_NAME = 'scores';
 const API_PATH = '/scores/1';
