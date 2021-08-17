@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 
 import Layout from '../components/Layout';

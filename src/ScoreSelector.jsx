@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import scores from './utils/scores';
 
 import styled from '@emotion/styled';
+import Section from './components/shared/Section';
 
 const Button = styled.div`
   display: inline-block;
@@ -43,13 +44,15 @@ const ScoreSelector = ({ saveScore }) => {
   }, []);
 
   return (
-    <Centerer>
-      {scores.map((score) => (
-        <Button key={score} onClick={() => saveScore(score)}>
-          {score}
-        </Button>
-      ))}
-    </Centerer>
+    <Section lvl={8}>
+      <Centerer>
+        {scores.map((score) => (
+          <Button key={score} onClick={() => saveScore(score)}>
+            {score}
+          </Button>
+        ))}
+      </Centerer>
+    </Section>
   );
 };
 
